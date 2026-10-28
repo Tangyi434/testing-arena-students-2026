@@ -6,7 +6,7 @@
 
 # parse_measurement
 - ungültiger datentyp
-- eingabe aber einaml mit 4 und einmal mit 3 leerzeichen
+- eingabe aber mehr leerzeichen
 - eingabe aber mit 4 feldern
 
 # filter_by_temperature
@@ -28,4 +28,4 @@
 - ungültiger datentyp
 - leer = valueError
 - eingabe bleibt gleich
-- bei mehrereren gleichen ausgaben kommt das mit frühere uhrzeit, sonst das erste
+- bei mehrereren gleichen ausgaben (temperatur") kommt das mit frühere uhrzeit, sonst das erste
