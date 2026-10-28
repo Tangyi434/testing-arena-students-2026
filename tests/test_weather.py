@@ -109,10 +109,16 @@ def test_average_temperature_errors():
 
 def test_hottest_measurement_with_unique_maximum():
     measurements = [
-        ("Köln", 600, 10.0),
+        ("Köln", 600, 17.0),
         ("Düsseldorf", 720, 25.0),
         ("Bonn", 900, 20.0),
     ]
+
+    measurements_max = [
+                        ("Köln", 600, 25.0),
+                        ("Düsseldorf", 720, 25.0),
+                        ("Bonn", 600, 10.0),
+        ]
 
     measurements_multiple_max = [
                     ("Köln", 600, 25.0),
@@ -121,7 +127,7 @@ def test_hottest_measurement_with_unique_maximum():
     ]
 
     assert hottest_measurement(measurements) == ("Düsseldorf", 720, 25.0)
-    assert hottest_measurement(measurements_multiple_max) == ("Köln", 600, 25.0)
+    assert hottest_measurement(measurements_max) == ("Köln", 600, 25.0)
     assert hottest_measurement(measurements_multiple_max) == ("Köln", 600, 25.0)
 
 
@@ -143,3 +149,5 @@ def test_hottest_measurement_with_unique_maximum_errors():
         hottest_measurement(3409)
         hottest_measurement(("Köln", 600, None))
         hottest_measurement(("Köln", 600))
+        hottest_measurement(("Koeln", 600, 25.0))
+        
